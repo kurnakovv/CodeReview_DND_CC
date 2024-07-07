@@ -1,0 +1,94 @@
+Introduction
+- I'm not a professional
+- I'm not better than you
+- This is IMHO
+- Don't believe everything I say here
+- I can make mistakes
+- I don't do everything what I say
+- If you will have questions, ask
+- This is old project
+- Not all review changes
+- Sorry for my English
+
+About project
+- tell me :)
+- Use it
+
+Git / GitHub
+- ReadMe https://github.com/jehna/readme-best-practices https://gist.github.com/PurpleBooth/109311bb0361f32d87a2 https://github.com/kurnakovv/NotSocialNetwork_Blazor
+- gitignore without "VisualStudio", final: ".gitignore" (delete "bin" & "obj")
+- Commit messages is long (50 symbols)
+- Delete 'ed' from messages (Added -> Add) https://stackoverflow.com/questions/3580013/should-i-use-past-or-present-tense-in-git-commit-messages
+- "Fixed some text in program" -> "Reduce request input text"
+- Title: "Update file" is bad
+- (CreatureSize) File must be end with enter (git blame https://stackoverflow.com/questions/31203001/what-does-git-blame-do)
+  Why - https://stackoverflow.com/questions/5813311/whats-the-significance-of-the-no-newline-at-end-of-file-log
+
+
+Structure
+- folder "enum" -> "Enum"
+- Bussiness models -> folder "Models"
+- Classes should be public
+
+
+CreatureSize
+- "Creature_Size" -> "CreatureSize"
+- Numeration for enums (Enum flags https://stackoverflow.com/questions/8447/what-does-the-flags-enum-attribute-mean-in-c)
+- namespace
+
+
+Ancestry
+- Properties Pascal case (camelCase, snake_case, PascalCase) https://google.github.io/styleguide/csharp-style.html
+- Delete `= "undefined ancestry";`
+- size -> Property
+- Delete "...Bonus" ending
+- type int -> enum https://stackoverflow.com/a/29485/22817151
+- Constants
+
+
+Person
+- private
+- readonly
+- Delete nullable for _name
+- new Characteristic -> new(), but delete it altogether
+- Comment is useless (region)
+- Rename GetInfo to Print (read about ToString https://learn.microsoft.com/ru-ru/dotnet/api/system.object.tostring?view=net-8.0)
+- Use return GetInfo in return, do not depent on infrastructure
+- SetCharacteristic is useless
+- Extract Characteristic to separate file
+- Correct indentations for ctor (merge conflicts https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts)
+- Do not use space before Methods/ctors
+
+
+Characteristic
+- Class structure: properties, fields, ctors, public methods, private methods
+- Delete set
+- Try to use only 1 word in names
+- Rename GetModifierInt -> CalcModifier
+- Rename GetModifierString -> PrintModifier
+- (Math.Floor((decimal)(value - 10)/2)) -> Math.Floor((decimal)(value - 10)/2)
+- modifierDecimal is bad name, because it contains a type in name (preModifier)
+- Use spaces in formula: (value - 10)/2 -> (value - 10) / 2
+- Use "{}" for condition body
+- Use ternary operator if condition and logic are small
+
+
+Program
+- Input info so long
+- Use IsNullOrWhiteSpace instead if (name == "" || name == " ")
+- Person.Name is required
+- Use validation for every field in Program (not in BL classes)
+- GetAncestry -> CreateAncestry
+- for -> while
+- InvalidOption -> invalidOption
+- Transfer 17 line to AncestryRepository class (List method)
+- Constants
+
+
+Will think
+- GitHub Issues
+- Transfer enums and models -> another project (https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-new)
+- Interfaces for Characteristic
+- Validation properties (value object)
+- Web API
+- https://github.com/dotnet-architecture/eShopOnWeb
